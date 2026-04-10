@@ -38,6 +38,15 @@ class TicTacToe:
         self.create_menu()
         self.create_game_ui()
 
+        # 🎨 WATERMARK (ADDED HERE)
+        tk.Label(
+            self.root,
+            text="Made by Abhipsa",
+            font=("Arial", 8),
+            bg=self.bg_main,
+            fg=self.text
+        ).pack(side="bottom")
+
     # ---------- UI HELPERS ----------
     def styled_button(self, parent, text, cmd, color):
         btn = tk.Button(parent, text=text,
@@ -73,7 +82,6 @@ class TicTacToe:
         self.name1 = tk.Entry(self.card)
         self.name1.pack(pady=5)
 
-        # Player 2 (hidden)
         self.p2_frame = tk.Frame(self.card, bg=self.bg_card)
 
         tk.Label(self.p2_frame, text="Player 2",
@@ -82,7 +90,6 @@ class TicTacToe:
         self.name2 = tk.Entry(self.p2_frame)
         self.name2.pack(pady=5)
 
-        # Mode buttons
         self.ai_btn = self.styled_button(self.card, "Play vs Computer",
                                          lambda: self.set_mode("AI"), self.accent)
         self.ai_btn.pack(pady=5)
@@ -91,7 +98,6 @@ class TicTacToe:
                                           lambda: self.set_mode("PVP"), self.green)
         self.pvp_btn.pack(pady=5)
 
-        # Difficulty
         tk.Label(self.card, text="Difficulty",
                  bg=self.bg_card, fg=self.text).pack(pady=5)
 
@@ -371,4 +377,4 @@ class TicTacToe:
 # ---------- RUN ----------
 root = tk.Tk()
 app = TicTacToe(root)
-root.mainloop()i
+root.mainloop()
