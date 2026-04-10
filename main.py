@@ -1,3 +1,8 @@
+# =====================================
+# Tic Tac Toe Game
+# Developed by Abhipsa
+# © 2026 All rights reserved
+# =====================================
 import tkinter as tk
 import random
 
